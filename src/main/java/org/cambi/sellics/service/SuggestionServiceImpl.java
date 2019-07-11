@@ -16,18 +16,16 @@ import org.cambi.sellics.constant.Constants;
 import org.cambi.sellics.model.amazon.ScoreResult;
 import org.cambi.sellics.model.amazon.Suggestion;
 import org.cambi.sellics.model.amazon.SuggestionResult;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import io.reactivex.Observable;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 public class SuggestionServiceImpl extends Constants implements ISuggestionService {
-
-	private static final Logger log = LoggerFactory.getLogger(SuggestionServiceImpl.class);
 
 	@Autowired
 	private RestTemplate restTemplate;

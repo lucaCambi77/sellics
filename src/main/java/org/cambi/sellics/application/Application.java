@@ -4,8 +4,6 @@ import java.net.URISyntaxException;
 
 import org.cambi.sellics.constant.Constants;
 import org.cambi.sellics.service.ISuggestionService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * SpringBootApplication with RestController and /estimate path for calculation
  * of score from keyword
@@ -25,9 +25,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 @SpringBootApplication
 @RestController
+@Slf4j
 public class Application extends Constants {
-
-	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
 	@Autowired
 	private ISuggestionService suggestionService;
